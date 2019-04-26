@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cuong.Data\Cuong.Data.csproj" />
+    <ProjectReference Include="..\Cuong.Infrastructure\Cuong.Infrastructure.csproj" />
+    <ProjectReference Include="..\Cuong.Web\Cuong.Web.csproj" />
+  </ItemGroup>
+
+</Project>

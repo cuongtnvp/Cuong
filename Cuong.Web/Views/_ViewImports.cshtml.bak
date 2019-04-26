@@ -1,0 +1,6 @@
+@using Microsoft.AspNetCore.Identity
+@using Cuong.Web
+@using Cuong.Web.Models
+@using Cuong.Web.Models.AccountViewModels
+@using Cuong.Web.Models.ManageViewModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
