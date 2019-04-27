@@ -8,11 +8,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Cuong.Web.Data;
+
 using Cuong.Web.Models;
 using Cuong.Web.Services;
 using Cuong.Data.EF;
 using Cuong.Data.Entities;
+using AutoMapper;
+using Cuong.Application.Interfaces;
+using Cuong.Data.IRepositories;
+using Cuong.Data.EF.Repositories;
 
 namespace Cuong.Web
 {
@@ -38,8 +42,16 @@ namespace Cuong.Web
             // Add application services.
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(),sp.GetService));
+
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<DbInitializer>();
+
+
+            services.AddTransient<IProductCategoryRepository,ProductCategoryRepository>();
+            services.AddTransient<IProductCategoryService>();
 
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver());
         }
