@@ -5,15 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
-    <Folder Include="Extensions\" />
+    <Compile Remove="IRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Cuong.Data\Cuong.Data.csproj" />
     <ProjectReference Include="..\Cuong.Infrastructure\Cuong.Infrastructure.csproj" />
-    <ProjectReference Include="..\Cuong.Web\Cuong.Web.csproj" />
+    <ProjectReference Include="..\Cuong.Utilities\Cuong.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

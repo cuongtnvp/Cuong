@@ -17,6 +17,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cuong.Data.EF\Cuong.Data.EF.csproj" />
     <ProjectReference Include="..\Cuong.Data\Cuong.Data.csproj" />
     <ProjectReference Include="..\Cuong.Infrastructure\Cuong.Infrastructure.csproj" />
     <ProjectReference Include="..\Cuong.Utilities\Cuong.Utilities.csproj" />
